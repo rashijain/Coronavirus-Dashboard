@@ -1,0 +1,65 @@
+h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.42857143;
+}
+
+.well {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.shiny-table.spacing-s > tbody > tr > td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.table.shiny-table > tbody > tr > td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.table>tbody>tr>td {
+  border-top-color: #2b3e50;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    background-color: #4e5d6c;
+    color: #ebebeb;
+}
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border-top: 1px solid #2b3e50;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 5px 18px;
+    border-bottom: 1px solid #2b3e50;
+}
+
+div.datatables {
+    color: #ebebeb;
+}
+
+table.dataTable tr.selected td, table.dataTable td.selected {
+    background-color: #4e5d6c !important;
+}
