@@ -18,3 +18,4 @@ The dashboard consists of a data table with confirmed, deaths and recovered case
 Two different views are available in the dashboard: World and USA. 
 
 Link to the application: https://rashi-jain.shinyapps.io/CoronavirusDashboard/
+*NOTE: Application might not show correct number of cases during the data update, around midnight.*
