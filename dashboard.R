@@ -77,14 +77,14 @@ deathData <- dat[order(-dat$Total.Deaths),c("Total.Deaths","Country.Region")]
 recData <- dat[order(-dat$Total.Recovered),c("Total.Recovered","Country.Region")]
 
 dataTotal <- data.frame(
-  category=c("Deaths", "Recovered", "Active"),
-  count=c(sum(dat$Total.Deaths), sum(dat$Total.Recovered), sum(dat$Total.Confirmed)-sum(dat$Total.Deaths)-sum(dat$Total.Recovered))
+  category=c("Deaths", "Active", "Recovered"),
+  count=c(sum(dat$Total.Deaths), sum(dat$Total.Confirmed)-sum(dat$Total.Deaths)-sum(dat$Total.Recovered), sum(dat$Total.Recovered))
 )
 dataDonut <- dataTotal %>% 
   mutate(lab.pos = cumsum(count)-.5*count) %>% 
   arrange(desc(count)) %>%
   mutate(category=factor(category,levels=category))
-mycols <- c("gold", "green3", "orange")
+mycols1 <- c("green3", "gold", "orange")
 
 ndat <- dat[c("Country.Region","Total.Confirmed","Total.Deaths","Total.Recovered")]
 
@@ -274,7 +274,7 @@ server <- function(input, output) {
   output$donutTotal <- renderPlot({
     ggplot(dataDonut, aes(x = 2, y=count, fill = category)) + 
       geom_bar(stat = "identity", color="white") + 
-      xlim(1,2.5) + scale_fill_manual(values = mycols) +
+      xlim(1,2.5) + scale_fill_manual(values = mycols1) +
       coord_polar(theta = "y", start=0) + 
       geom_text(aes(y = lab.pos, label = category), color = "black") + 
       annotate(geom = 'text', x = 1, y = 0, label = paste0("Confirmed\n", sum(dataTotal$count)), color="red") + 
